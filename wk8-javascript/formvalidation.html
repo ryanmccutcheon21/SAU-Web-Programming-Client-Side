@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Practice</title>
+  <meta charset="utf-8">
+<style>
+input { display: block;
+        margin-bottom: 1em;
+        }
+label { float: left;
+        width: 5em;
+		padding-right: 1em;
+        text-align: right; 
+}
+#submit { margin-left: 7em; }		
+</style>
+<script>
+function validateForm() {
+if (document.forms[1].userName1.value == "" ) {
+    alert("Name field cannot be empty.");
+    return false;
+} // end if
+if (document.forms[1].userAge1.value < 18) {
+    alert("Age is less than 18. You are not an adult.");
+    return false;
+} // end if
+alert("Name and age are valid.");
+return true;
+} // end function validateForm
+</script>
+</head>
+<body>
+<h1>JavaScript Form Handling</h1>
+<form method="post"
+      action="http://webdevfoundations.net/scripts/formdemo.asp"
+      onsubmit="return validateForm();">
+<label for="userName">Name:</label>
+<input type="text" name="userName" id="userName">
+<label for="userAge">Age:</label>
+<input type="text" name="userAge" id="userAge">
+<input type="submit" value="Send information" id="submit">
+</form>
+
+<form method="post"
+      action="http://webdevfoundations.net/scripts/formdemo.asp"
+      onsubmit="return validateForm();">
+<label for="userName">Name:</label>
+<input type="text" name="userName1" id="userName">
+<label for="userAge">Age:</label>
+<input type="text" name="userAge1" id="userAge">
+<input type="submit" value="Send information" id="submit1">
+</form>
+</body>
+</html>
